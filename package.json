@@ -31,7 +31,6 @@
     "posttest": "npm run lint"
   },
   "devDependencies": {
-    "async-iterators": "^0.2.2",
     "eslint": "^3.11.1",
     "eslint-config-loopback": "^6.0.0",
     "mocha": "^2.1.0",
@@ -39,6 +38,7 @@
   },
   "dependencies": {
     "async": "~1.0.0",
+    "async-iterators": "^0.2.2",
     "bluebird": "^3.1.1",
     "debug": "^2.1.1",
     "depd": "^1.0.0",

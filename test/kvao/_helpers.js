@@ -2,8 +2,14 @@
 
 var Promise = require('bluebird');
 
-exports.givenCacheItem = function(dataSourceFactory) {
+exports.givenCacheItem = function(dataSourceFactory, excludeFromConnector) {
   var dataSource = dataSourceFactory();
+
+  if (excludeFromConnector) {
+    // `delete connector.deleteAll` doesn't work
+    dataSource.connector[excludeFromConnector] = undefined;
+  }
+
   return dataSource.createModel('CacheItem', {
     key: String,
     value: 'any',
